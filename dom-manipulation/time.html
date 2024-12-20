@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+.center {
+    text-align: center;
+    background: #282c34;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+#banner {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f0db4f;
+}
+
+#clock {
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #61dafb;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="center">
+        <div id="banner">
+            <span>your local time</span>
+        </div>
+        <div id="clock"></div>
+    </div>
+    
+</body>
+<script>
+
+const getTime=()=>{
+    let time = new Date().toLocaleTimeString()
+
+document.querySelector('#clock').textContent=time
+}
+
+
+
+setInterval(()=>{
+getTime()
+},1000)
+
+</script>
+</html>

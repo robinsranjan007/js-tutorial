@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(38, 33, 33);
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 id="title" class="heading">Dom learning on chai or code</h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque placeat impedit at laboriosam illum architecto temporibus possimus in error odit?</p>
+        <ul>
+            <li class="lists">one</li>
+            <li class="lists">two</li>
+            <li class="lists">three</li>
+            <li class="lists">four</li>
+        </ul>
+    </div>
+
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">friday</div>
+    </div>
+</body>
+<script>
+    let parent =document.querySelector('.parent')
+    console.log(parent.children[2].innerHTML)
+
+    for(let i=0;i<parent.children.length;i++)
+{
+    console.log(parent.children[i].innerHTML)
+}
+
+parent.children[1].style.color="Red"
+
+console.log(parent.firstElementChild.innerHTML)
+console.log(parent.lastElementChild.innerHTML)
+
+let day1= document.querySelector('.parent')
+let monday=day1.firstElementChild.innerHTML
+console.log(monday)
+
+let dayOne=document.querySelector('.day')
+console.log(dayOne.parentElement.innerHTML)
+console.log(dayOne.nextElementSibling.innerHTML)
+
+console.log("Nodes",parent.childNodes)
+
+
+
+// ----------------------creating element---------------------------------------------------------
+
+let div= document.createElement('div')  //creating--step -1
+
+
+//-----------------setting properties of the element------------------
+div.className="main"
+div.id==Math.round(Math.random()*10)
+div.setAttribute('title','generated-title')
+div.style.backgroundColor="yellow"
+div.style.color=" red"
+div.style.padding="22px"
+div.style.fontSize="22px"
+// div.innerText="chai aur code"  option b
+
+let text = document.createTextNode("chai aur code")
+
+//------------------adding the element to the dom---------------------------------
+div.appendChild(text)
+
+parent.appendChild(div)
+
+// document.body.appendChild(div)
+
+//-----------------------------EDIT AND REMOVE---------------------------------------------------------------------------
+
+let par = document.querySelector('.parent')
+let fri=par.children[4]
+console.log(fri)
+
+let newfri=document.createTextNode('FRIDAY')
+
+fri.replaceWith(newfri)
+
+
+//--------------------------------------REMOVE--------------------------------
+
+
+par.lastElementChild.remove()
+
+
+
+
+
+
+
+
+</script>
+</html>
+
+
+    

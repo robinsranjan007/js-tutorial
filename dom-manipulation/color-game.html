@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Color Boxes</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .instruction {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="instruction">Try clicking on the boxes to change the background color</div>
+    <div class="container">
+        <div class="box red" ></div>
+        <div class="box blue"  ></div>
+        <div class="box green"  ></div>
+        <div class="box yellow"  ></div>
+    </div>
+</body>
+
+
+<script>
+
+ 
+let boxes = document.querySelectorAll('.box')
+let body = document.querySelector('body')
+
+ boxes.forEach((val)=>{
+    val.addEventListener('click',(e)=>{
+      let color=  e.target.classList[1]
+      body.style.backgroundColor=color
+      console.log(e.target)
+    })
+ })
+
+</script>
+</html>
