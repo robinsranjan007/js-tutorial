@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start and Stop Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(145deg, #f3f4f7, #d4d5d9);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        /* Start Button Styles */
+        .start-button {
+            background: linear-gradient(145deg, #28a745, #218838);
+            box-shadow: 5px 5px 15px #1e7e34, -5px -5px 15px #34ce57;
+        }
+
+        .start-button:hover {
+            box-shadow: inset 5px 5px 15px #1e7e34, inset -5px -5px 15px #34ce57;
+        }
+
+        .start-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Stop Button Styles */
+        .stop-button {
+            background: linear-gradient(145deg, #dc3545, #c82333);
+            box-shadow: 5px 5px 15px #bd2130, -5px -5px 15px #e4606d;
+        }
+
+        .stop-button:hover {
+            box-shadow: inset 5px 5px 15px #bd2130, inset -5px -5px 15px #e4606d;
+        }
+
+        .stop-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class=" start button start-button">Start</button>
+        <button class=" stop button stop-button">Stop</button>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+
+let interval;
+
+
+
+    let randomColor = function () {
+        const hexcode = '0123456789ABCDEF'
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+            color += hexcode[Math.floor(Math.random() * 16)]
+        }
+
+      
+        return color
+    }
+
+
+ 
+
+
+ 
+
+const startchangingcolor = function(){
+
+    if(!interval)
+{
+    interval= setInterval(()=>{
+     
+
+     document.body.style.backgroundColor=randomColor()
+     console.log(randomColor())
+ },1000)
+ 
+
+}
+
+}
+
+
+const stopchangingcolor = function(){
+ clearInterval(interval)
+ interval=null;
+}
+
+document.querySelector('.start').addEventListener('click', startchangingcolor)
+document.querySelector('.stop').addEventListener('click', stopchangingcolor)
+
+
+    
+</script>
+</html>
